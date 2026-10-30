@@ -4,7 +4,6 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 const app = express();
-const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -417,10 +416,12 @@ app.get("/api/proxy-download", async (req, res) => {
 
 // ─── Start ───────────────────────────────────────────────────────────────────
 
+const PORT = process.env.PORT || 3001;
+
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`\n🚀 ReelDownloader API running at http://localhost:${PORT}\n`);
+    console.log(`ReelDownloader API running at http://localhost:${PORT}`);
   });
 }
 
-module.exports = { app, fetchInstagram, fetchTikTok };
+module.exports = app;
