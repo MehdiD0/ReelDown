@@ -248,6 +248,53 @@ button, input, select, textarea {
   height: 14px;
 }
 
+/* ─── Navbar Responsive ─────────────────────────────────────────────────────── */
+
+@media (max-width: 540px) {
+  .navbar-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 14px;
+  }
+
+  /* Brand stays on its own row and shrinks text slightly */
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  /* Nav-right takes full width on its own row */
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Hide platform chips — too cramped on phones */
+  .platform-indicators {
+    display: none;
+  }
+
+  /* Compact theme toggle */
+  .theme-btn {
+    padding: 4px 8px;
+  }
+
+  /* Hide text labels in the theme switcher, show icons only */
+  .theme-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .brand {
+    font-size: 0.88rem;
+  }
+}
+
 /* ─── Header Section ───────────────────────────────────────────────────────── */
 
 .header-section {
